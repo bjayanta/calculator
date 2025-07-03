@@ -1,6 +1,11 @@
 import { Colors } from "@/utils/Colors";
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import {
+  GestureResponderEvent,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+} from "react-native";
 
 type ButtonProps = {
   title: string;
@@ -22,7 +27,7 @@ export default function Button({ title, type, onPress }: ButtonProps) {
               : Colors.btnLight,
         },
       ]}
-      onPress={onPress}
+      onPress={onPress as (event: GestureResponderEvent) => void}
     >
       <Text
         style={{
